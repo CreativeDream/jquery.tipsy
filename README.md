@@ -44,7 +44,9 @@ __trgigger Options:__
 jQuery Manual Triggering. Works only when option trigger is 'manual':
 * $('a[title]').tipsy.("show");
 * $('a[title]').tipsy("hide");
+
 or
+
 * $('a[title]').trigger("tipsy.show");
 * $('a[title]').trigger("tipsy.hide");
 
