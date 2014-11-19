@@ -25,7 +25,7 @@ __Javascript:__
 The plugin is named "tipsy" and can be applied to an element. You will probably also specify some options while applying the plugin.
 ~~~ javascript
 $('a[title]').tipsy({
-      arrowWidth: 10, //arrow css border-width * 2, default is 5 * 2
+      arrowWidth: 10, //arrow css border-width + margin-(left|right), default is 5 + 5
       attr: 'data-tipsy', //default attributes for tipsy - data-tipsy-position | data-tipsy-offset | data-tipsy-disabled
       cls: null, //tipsy custom class
       duration: 150, //tipsy fadeIn, fadeOut duration
