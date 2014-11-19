@@ -25,7 +25,7 @@
             duration: 150,
             offset: 7,
             position: 'top-center',
-            trigger: 'hover', // how tooltip is triggered - hover | focus | click | manual
+            trigger: 'hover',
             onShow: null,
             onHide: null
         }, t);
@@ -86,9 +86,6 @@
                         if(f.hasAttr(n.attr+'-disabled')){return false}
                         f._createBox();
                         if(n.trigger!='manual'){f._bindOptions()}
-                        o.stop(true,true).fadeIn(n.duration, function(){
-                            n.onShow != null && typeof n.onShow == "function" ? n.onShow(o, s) : null
-                        })
                     },
                     _hide: function(e){
                         f._fixTitle(true);
@@ -97,6 +94,11 @@
                             f._clear();
                             $(this).remove();   
                         })
+                    },
+                    _showIn: function(){
+                        o.stop(true,true).fadeIn(n.duration, function(){
+                            n.onShow != null && typeof n.onShow == "function" ? n.onShow(o, s) : null
+                        })   
                     },
                     _bindOptions: function(){
                         e(window).bind("contextmenu", function() {
@@ -240,6 +242,7 @@
                         if((n.cls!=null && typeof(n.cls)=="string") || f.hasAttr(n.attr+'-cls')){
                             o.addClass((f.hasAttr(n.attr+'-cls') ? s.attr(n.attr+'-cls') : n.cls));   
                         }
+                        f._showIn();
                     },
                     _lsWtI: [],
                     _lsWpI: []
