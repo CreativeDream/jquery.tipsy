@@ -55,6 +55,8 @@ Form element attributes:
 * data-tipsy-position
 * data-tipsy-offset
 
+
+
 __Bugs:__
 * On 'hover' trigger when element disappears, tipsy doesn't disappear to
 
