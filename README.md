@@ -55,6 +55,9 @@ Form element attributes:
 * data-tipsy-position
 * data-tipsy-offset
 
+__Bugs:__
+* On 'hover' trigger when element disappears, tipsy doesn't disappear to
+
 License
 -------
 > Licensed under <a href="http://opensource.org/licenses/MIT">MIT license</a>.
