@@ -57,7 +57,7 @@ Form element attributes:
 
 Bugs
 -------
-* On 'hover' trigger when element disappears, tipsy doesn't disappear to
+* On 'hover' trigger when element disappears, tipsy doesn't disappear too
 
 License
 -------
