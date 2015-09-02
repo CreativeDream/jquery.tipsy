@@ -238,10 +238,10 @@
                     },
                     _createBox: function(){
                         o.html(f._getTitle()).appendTo('body');
-                        o.css(f._position());
                         if((n.cls!=null && typeof(n.cls)=="string") || f.hasAttr(n.attr+'-cls')){
                             o.addClass((f.hasAttr(n.attr+'-cls') ? s.attr(n.attr+'-cls') : n.cls));
                         }
+                        o.css(f._position());
                         f._showIn();
                     },
                     _lsWtI: [],
