@@ -16,7 +16,7 @@
                     $(this).trigger('tipsy.hide');
                 break;
             }
-            return this;   
+            return this;
         }
         var n = e.extend({
             arrowWidth: 10,
@@ -72,7 +72,7 @@
                                     },
                                     "tipsy.hide": function(e){
                                         f._clSe = false;
-                                        f._hide(e);   
+                                        f._hide(e);
                                     }
                                 }
                             break;
@@ -92,13 +92,13 @@
                         o.stop(true,true).fadeOut(n.duration, function(){
                             n.onHide != null && typeof n.onHide == "function" ? n.onHide(o, s) : null
                             f._clear();
-                            $(this).remove();   
+                            $(this).remove();
                         })
                     },
                     _showIn: function(){
                         o.stop(true,true).fadeIn(n.duration, function(){
                             n.onShow != null && typeof n.onShow == "function" ? n.onShow(o, s) : null
-                        })   
+                        })
                     },
                     _bindOptions: function(){
                         e(window).bind("contextmenu", function() {
@@ -123,7 +123,7 @@
                         })
                     },
                     _clear: function(){
-                        o.attr("class","tipsy").empty();  
+                        o.attr("class","tipsy").empty();
                         f._lsWpI = [];
                         f._lsWtI = [];
                     },
@@ -146,7 +146,7 @@
                         f._fixTitle();
                         var title = s.attr('data-title');
                         title = '' + title;
-                        
+
                         return title;
                     },
                     _position: function(a){
@@ -162,7 +162,7 @@
                             },
                             tStyle = {
                                 width: o.outerWidth(),
-                                height: o.outerHeight()    
+                                height: o.outerHeight()
                             },
                             wStyle = {
                                 width: $(window).outerWidth(),
@@ -172,19 +172,19 @@
                             };
 
                         if($.inArray(position, p)==-1 || $.inArray(position, f._lsWpI)!==-1){ f._hide(); return css }else{ f._lsWpI.push(position) }
-                        
+
                         switch(arrow[0]){
                             case 'bottom':
                                 css.top = style.offsetTop + style.height + offset;
                                 if(css.top >= wStyle.height + wStyle.scrollTop){
-                                    return f._position('top' + '-' + arrow[1])    
+                                    return f._position('top' + '-' + arrow[1])
                                 }
                                 o.addClass('arrow-top');
                             break;
                             case 'top':
                                 css.top = style.offsetTop - tStyle.height - offset;
                                 if(css.top - wStyle.scrollTop <= 0){
-                                    return f._position('bottom' + '-' + arrow[1])    
+                                    return f._position('bottom' + '-' + arrow[1])
                                 }
                                 o.addClass('arrow-bottom');
                             break;
@@ -211,7 +211,7 @@
                             case 'left':
                                 css.left = style.offsetLeft + style.width / 2 - tStyle.width + n.arrowWidth;
                                 if(css.left <= 0){
-                                    return f._position(arrow[0] + '-' + 'right')    
+                                    return f._position(arrow[0] + '-' + 'right')
                                 }
                                 o.addClass('arrow-right');
                             break;
@@ -221,7 +221,7 @@
                                     return f._position(arrow[0] + '-' + 'left')
                                 }
                                 if(css.left <= 0){
-                                    return f._position(arrow[0] + '-' + 'right')    
+                                    return f._position(arrow[0] + '-' + 'right')
                                 }
                                 o.addClass('arrow-center');
                             break;
@@ -233,15 +233,15 @@
                                 o.addClass('arrow-left');
                             break;
                         }
-                        
+
                         return css;
                     },
                     _createBox: function(){
                         o.html(f._getTitle()).appendTo('body');
-                        o.css(f._position());
                         if((n.cls!=null && typeof(n.cls)=="string") || f.hasAttr(n.attr+'-cls')){
-                            o.addClass((f.hasAttr(n.attr+'-cls') ? s.attr(n.attr+'-cls') : n.cls));   
+                            o.addClass((f.hasAttr(n.attr+'-cls') ? s.attr(n.attr+'-cls') : n.cls));
                         }
+                        o.css(f._position());
                         f._showIn();
                     },
                     _lsWtI: [],
